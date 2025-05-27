@@ -59,18 +59,18 @@ refer to the applicable agreement for further details.
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
-		(pt 320 32)
-		(output)
-		(text "rdyFlg" (rect 0 0 37 19)(font "Intel Clear" (font_size 8)))
-		(text "rdyFlg" (rect 264 24 301 43)(font "Intel Clear" (font_size 8)))
-		(line (pt 320 32)(pt 304 32))
-	)
-	(port
 		(pt 320 48)
 		(output)
 		(text "outputSig[0..255][7..0]" (rect 0 0 135 19)(font "Intel Clear" (font_size 8)))
 		(text "outputSig[0..255][7..0]" (rect 184 40 319 59)(font "Intel Clear" (font_size 8)))
 		(line (pt 320 48)(pt 304 48)(line_width 3))
+	)
+	(port
+		(pt 320 32)
+		(output)
+		(text "rdyFlg" (rect 0 0 37 19)(font "Intel Clear" (font_size 8)))
+		(text "rdyFlg" (rect 264 24 301 43)(font "Intel Clear" (font_size 8)))
+		(line (pt 320 32)(pt 304 32))
 	)
 	(drawing
 		(rectangle (rect 16 16 304 112))

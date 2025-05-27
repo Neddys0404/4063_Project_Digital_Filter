@@ -1,0 +1,28 @@
+module filter_selector (
+    input  logic [7:0] firSig [0:255], // 8-bit unsigned FIR signal
+    input  logic [7:0] maSig  [0:255], // 8-bit unsigned MA signal
+    input  logic       firRdy,        // FIR signal ready
+    input  logic       maRdy,         // MA signal ready
+    input  logic [1:0] sw,            // One-hot control switches
+    output logic [7:0] outSig [0:255],// Output signal
+    output logic       outRdy         // Output ready
+);
+
+    always_latch begin
+        case (sw)
+            2'b10: begin
+                outSig = firSig;
+                outRdy = firRdy;
+            end
+            2'b01: begin
+                outSig = maSig;
+                outRdy = maRdy;
+            end
+            default: begin
+                outSig = '{default:8'd0}; // Clear output
+                outRdy = 1'b0;
+            end
+        endcase
+    end
+
+endmodule

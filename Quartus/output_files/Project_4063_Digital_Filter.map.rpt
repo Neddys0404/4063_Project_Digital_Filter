@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Project_4063_Digital_Filter
-Tue May 27 00:13:50 2025
+Wed May 28 01:04:32 2025
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -20,6 +20,7 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
  12. Post-Synthesis Netlist Statistics for Top Partition
  13. Elapsed Time Per Partition
  14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,7 +46,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 27 00:13:50 2025       ;
+; Analysis & Synthesis Status        ; Successful - Wed May 28 01:04:32 2025       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; Project_4063_Digital_Filter                 ;
 ; Top-level Entity Name              ; Project_4063_Digital_Filter                 ;
@@ -54,11 +55,11 @@ refer to the applicable agreement for further details.
 ;     Total combinational functions  ; 0                                           ;
 ;     Dedicated logic registers      ; 0                                           ;
 ; Total registers                    ; 0                                           ;
-; Total pins                         ; 2                                           ;
+; Total pins                         ; 7                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 1                                           ;
+; Total PLLs                         ; 0                                           ;
 ; UFM blocks                         ; 0                                           ;
 ; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -166,66 +167,65 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                              ;
-+-------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path    ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                 ; Library ;
-+-------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
-; rtl/Project_4063_Digital_Filter.bdf ; yes             ; User Block Diagram/Schematic File  ; E:/Documents Alt/ECE4063/Project/Quartus/rtl/Project_4063_Digital_Filter.bdf ;         ;
-; pll_clk.vhd                         ; yes             ; User Wizard-Generated File         ; E:/Documents Alt/ECE4063/Project/Quartus/pll_clk.vhd                         ;         ;
-; altpll.tdf                          ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/altpll.tdf                        ;         ;
-; aglobal180.inc                      ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/aglobal180.inc                    ;         ;
-; stratix_pll.inc                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/stratix_pll.inc                   ;         ;
-; stratixii_pll.inc                   ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/stratixii_pll.inc                 ;         ;
-; cycloneii_pll.inc                   ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/cycloneii_pll.inc                 ;         ;
-; db/pll_clk_altpll.v                 ; yes             ; Auto-Generated Megafunction        ; E:/Documents Alt/ECE4063/Project/Quartus/db/pll_clk_altpll.v                 ;         ;
-+-------------------------------------+-----------------+------------------------------------+------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++---------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path      ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                   ; Library ;
++---------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
+; Ned_Filter/filter_selector.sv         ; yes             ; User SystemVerilog HDL File        ; E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/filter_selector.sv         ;         ;
+; Ned_Filter/moving_avg_filter_51tap.sv ; yes             ; User SystemVerilog HDL File        ; E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/moving_avg_filter_51tap.sv ;         ;
+; Ned_Filter/fir_lowpass.sv             ; yes             ; User SystemVerilog HDL File        ; E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/fir_lowpass.sv             ;         ;
+; Khor_LUT/waveform_converter.sv        ; yes             ; User SystemVerilog HDL File        ; E:/Documents Alt/ECE4063/Project/Quartus/Khor_LUT/waveform_converter.sv        ;         ;
+; rtl/Project_4063_Digital_Filter.bdf   ; yes             ; User Block Diagram/Schematic File  ; E:/Documents Alt/ECE4063/Project/Quartus/rtl/Project_4063_Digital_Filter.bdf   ;         ;
+; pll_clk.vhd                           ; yes             ; User Wizard-Generated File         ; E:/Documents Alt/ECE4063/Project/Quartus/pll_clk.vhd                           ;         ;
+; Ned_Filter/Filters.bdf                ; yes             ; User Block Diagram/Schematic File  ; E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/Filters.bdf                ;         ;
+; altpll.tdf                            ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
+; aglobal180.inc                        ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/aglobal180.inc                      ;         ;
+; stratix_pll.inc                       ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
+; stratixii_pll.inc                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
+; cycloneii_pll.inc                     ; yes             ; Megafunction                       ; d:/quartus/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
+; db/pll_clk_altpll.v                   ; yes             ; Auto-Generated Megafunction        ; E:/Documents Alt/ECE4063/Project/Quartus/db/pll_clk_altpll.v                   ;         ;
++---------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                       ;
-+---------------------------------------------+-------------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                               ;
-+---------------------------------------------+-------------------------------------------------------------------------------------+
-;                                             ;                                                                                     ;
-; Total combinational functions               ; 0                                                                                   ;
-; Logic element usage by number of LUT inputs ;                                                                                     ;
-;     -- 4 input functions                    ; 0                                                                                   ;
-;     -- 3 input functions                    ; 0                                                                                   ;
-;     -- <=2 input functions                  ; 0                                                                                   ;
-;                                             ;                                                                                     ;
-; Logic elements by mode                      ;                                                                                     ;
-;     -- normal mode                          ; 0                                                                                   ;
-;     -- arithmetic mode                      ; 0                                                                                   ;
-;                                             ;                                                                                     ;
-; Total registers                             ; 0                                                                                   ;
-;     -- Dedicated logic registers            ; 0                                                                                   ;
-;     -- I/O registers                        ; 0                                                                                   ;
-;                                             ;                                                                                     ;
-; I/O pins                                    ; 2                                                                                   ;
-;                                             ;                                                                                     ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                                   ;
-;                                             ;                                                                                     ;
-; Total PLLs                                  ; 1                                                                                   ;
-;     -- PLLs                                 ; 1                                                                                   ;
-;                                             ;                                                                                     ;
-; Maximum fan-out node                        ; pll_clk:inst|altpll:altpll_component|pll_clk_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 2                                                                                   ;
-; Total fan-out                               ; 5                                                                                   ;
-; Average fan-out                             ; 1.00                                                                                ;
-+---------------------------------------------+-------------------------------------------------------------------------------------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+;                                             ;        ;
+; Total combinational functions               ; 0      ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 0      ;
+;     -- 3 input functions                    ; 0      ;
+;     -- <=2 input functions                  ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 0      ;
+;     -- arithmetic mode                      ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+;     -- Dedicated logic registers            ; 0      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 7      ;
+;                                             ;        ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+;                                             ;        ;
+; Maximum fan-out node                        ; busClk ;
+; Maximum fan-out                             ; 1      ;
+; Total fan-out                               ; 7      ;
+; Average fan-out                             ; 0.50   ;
++---------------------------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                          ;
-+------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                             ; Entity Name                 ; Library Name ;
-+------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------+-----------------------------+--------------+
-; |Project_4063_Digital_Filter             ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 2    ; 0            ; 0          ; |Project_4063_Digital_Filter                                                                    ; Project_4063_Digital_Filter ; work         ;
-;    |pll_clk:inst|                        ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Project_4063_Digital_Filter|pll_clk:inst                                                       ; pll_clk                     ; work         ;
-;       |altpll:altpll_component|          ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Project_4063_Digital_Filter|pll_clk:inst|altpll:altpll_component                               ; altpll                      ; work         ;
-;          |pll_clk_altpll:auto_generated| ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Project_4063_Digital_Filter|pll_clk:inst|altpll:altpll_component|pll_clk_altpll:auto_generated ; pll_clk_altpll              ; work         ;
-+------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------+-----------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                           ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------+-----------------------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name          ; Entity Name                 ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------+-----------------------------+--------------+
+; |Project_4063_Digital_Filter ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 7    ; 0            ; 0          ; |Project_4063_Digital_Filter ; Project_4063_Digital_Filter ; work         ;
++------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -649,8 +649,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+---------------------------------+
 ; Type              ; Count                           ;
 +-------------------+---------------------------------+
-; boundary_port     ; 2                               ;
-; cycloneiii_pll    ; 1                               ;
+; boundary_port     ; 7                               ;
 ;                   ;                                 ;
 ; Max LUT depth     ; 0.00                            ;
 ; Average LUT depth ; 0.00                            ;
@@ -662,7 +661,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -672,15 +671,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Tue May 27 00:13:37 2025
+    Info: Processing started: Wed May 28 01:03:34 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project_4063_Digital_Filter -c Project_4063_Digital_Filter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file ned_filter/filter_selector.sv
+    Info (12023): Found entity 1: filter_selector File: E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/filter_selector.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ned_filter/signalsender.sv
+    Info (12023): Found entity 1: SignalSender File: E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/SignalSender.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ned_filter/signalbuffer.sv
+    Info (12023): Found entity 1: SignalBuffer File: E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/SignalBuffer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ned_filter/moving_avg_filter_51tap.sv
+    Info (12023): Found entity 1: moving_avg_filter_51tap File: E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/moving_avg_filter_51tap.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ned_filter/fir_lowpass.sv
+    Info (12023): Found entity 1: fir_lowpass_filter File: E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/fir_lowpass.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file khor_lut/waveform_converter.sv
+    Info (12023): Found entity 1: waveform_converter File: E:/Documents Alt/ECE4063/Project/Quartus/Khor_LUT/waveform_converter.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file rtl/project_4063_digital_filter.bdf
     Info (12023): Found entity 1: Project_4063_Digital_Filter
 Info (12021): Found 2 design units, including 1 entities, in source file pll_clk.vhd
     Info (12022): Found design unit 1: pll_clk-SYN File: E:/Documents Alt/ECE4063/Project/Quartus/pll_clk.vhd Line: 51
     Info (12023): Found entity 1: pll_clk File: E:/Documents Alt/ECE4063/Project/Quartus/pll_clk.vhd Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file ned_filter/filters.bdf
+    Info (12023): Found entity 1: Filters
 Info (12127): Elaborating entity "Project_4063_Digital_Filter" for the top level hierarchy
 Info (12128): Elaborating entity "pll_clk" for hierarchy "pll_clk:inst"
 Info (12128): Elaborating entity "altpll" for hierarchy "pll_clk:inst|altpll:altpll_component" File: E:/Documents Alt/ECE4063/Project/Quartus/pll_clk.vhd Line: 133
@@ -743,16 +756,43 @@ Info (12133): Instantiated megafunction "pll_clk:inst|altpll:altpll_component" w
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_clk_altpll.v
     Info (12023): Found entity 1: pll_clk_altpll File: E:/Documents Alt/ECE4063/Project/Quartus/db/pll_clk_altpll.v Line: 29
 Info (12128): Elaborating entity "pll_clk_altpll" for hierarchy "pll_clk:inst|altpll:altpll_component|pll_clk_altpll:auto_generated" File: d:/quartus/quartus/libraries/megafunctions/altpll.tdf Line: 897
+Info (12128): Elaborating entity "waveform_converter" for hierarchy "waveform_converter:inst1"
+Warning (10230): Verilog HDL assignment warning at waveform_converter.sv(30): truncated value with size 32 to match size of target (8) File: E:/Documents Alt/ECE4063/Project/Quartus/Khor_LUT/waveform_converter.sv Line: 30
+Warning (10230): Verilog HDL assignment warning at waveform_converter.sv(32): truncated value with size 32 to match size of target (8) File: E:/Documents Alt/ECE4063/Project/Quartus/Khor_LUT/waveform_converter.sv Line: 32
+Info (10264): Verilog HDL Case Statement information at waveform_converter.sv(22): all case item expressions in this case statement are onehot File: E:/Documents Alt/ECE4063/Project/Quartus/Khor_LUT/waveform_converter.sv Line: 22
+Info (12128): Elaborating entity "Filters" for hierarchy "Filters:inst4"
+Info (12128): Elaborating entity "filter_selector" for hierarchy "Filters:inst4|filter_selector:filter_sel_inst"
+Info (10264): Verilog HDL Case Statement information at filter_selector.sv(12): all case item expressions in this case statement are onehot File: E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/filter_selector.sv Line: 12
+Info (12128): Elaborating entity "fir_lowpass_filter" for hierarchy "Filters:inst4|fir_lowpass_filter:firfilt_inst"
+Info (12128): Elaborating entity "moving_avg_filter_51tap" for hierarchy "Filters:inst4|moving_avg_filter_51tap:mafilt_inst"
+Warning (10230): Verilog HDL assignment warning at moving_avg_filter_51tap.sv(27): truncated value with size 32 to match size of target (8) File: E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/moving_avg_filter_51tap.sv Line: 27
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following PLL node(s):
+        Warning (14320): Synthesized away node "pll_clk:inst|altpll:altpll_component|pll_clk_altpll:auto_generated|wire_pll1_clk[0]" File: E:/Documents Alt/ECE4063/Project/Quartus/db/pll_clk_altpll.v Line: 77
+Info (144001): Generated suppressed messages file E:/Documents Alt/ECE4063/Project/Quartus/output_files/Project_4063_Digital_Filter.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 3 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4798 megabytes
-    Info: Processing ended: Tue May 27 00:13:50 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:22
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 7 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "busClk"
+    Warning (15610): No output dependent on input pin "control_Filter[1]"
+    Warning (15610): No output dependent on input pin "control_Filter[0]"
+    Warning (15610): No output dependent on input pin "control_wave[3]"
+    Warning (15610): No output dependent on input pin "control_wave[2]"
+    Warning (15610): No output dependent on input pin "control_wave[1]"
+    Warning (15610): No output dependent on input pin "control_wave[0]"
+Info (21057): Implemented 7 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 5168 megabytes
+    Info: Processing ended: Wed May 28 01:04:32 2025
+    Info: Elapsed time: 00:00:58
+    Info: Total CPU time (on all processors): 00:01:00
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in E:/Documents Alt/ECE4063/Project/Quartus/output_files/Project_4063_Digital_Filter.map.smsg.
 
 

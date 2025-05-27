@@ -7,19 +7,20 @@ module fir_lowpass_filter (
     output logic [7:0] outputSig [0:255] // 8-bit unsigned
 );
 
-    localparam int TAPS = 51;
+    localparam int TAPS = 50;
     localparam int FRAC_BITS = 14;
 
     // Fixed-point coefficients (Q2.14), signed 16-bit
     logic signed [15:0] coeffs [0:TAPS-1] = '{
-        16'sd40, 16'sd43, 16'sd49, 16'sd60, 16'sd75, 16'sd94, 16'sd117,
-        16'sd143, 16'sd173, 16'sd206, 16'sd241, 16'sd278, 16'sd316, 16'sd355,
-        16'sd394, 16'sd432, 16'sd469, 16'sd504, 16'sd536, 16'sd565, 16'sd589,
-        16'sd609, 16'sd625, 16'sd636, 16'sd642, 16'sd642, 16'sd636, 16'sd625,
-        16'sd609, 16'sd589, 16'sd565, 16'sd536, 16'sd504, 16'sd469, 16'sd432,
-        16'sd394, 16'sd355, 16'sd316, 16'sd278, 16'sd241, 16'sd206, 16'sd173,
-        16'sd143, 16'sd117, 16'sd94, 16'sd75, 16'sd60, 16'sd49, 16'sd43, 16'sd40
-    };
+		 16'sd40, 16'sd43, 16'sd49, 16'sd60, 16'sd75, 16'sd94, 16'sd117,
+		 16'sd143, 16'sd173, 16'sd206, 16'sd241, 16'sd278, 16'sd316, 16'sd355,
+		 16'sd394, 16'sd432, 16'sd469, 16'sd504, 16'sd536, 16'sd565, 16'sd589,
+		 16'sd609, 16'sd625, 16'sd636, 16'sd642, 16'sd642, 16'sd636, 16'sd625,
+		 16'sd609, 16'sd589, 16'sd565, 16'sd536, 16'sd504, 16'sd469, 16'sd432,
+		 16'sd394, 16'sd355, 16'sd316, 16'sd278, 16'sd241, 16'sd206, 16'sd173,
+		 16'sd143, 16'sd117, 16'sd94,  16'sd75,  16'sd60,  16'sd49,  16'sd43,
+		 16'sd40 
+	};
 
     // Internal signed accumulator (wide enough to hold 51 * 255 * 2^14)
     logic signed [31:0] acc;
