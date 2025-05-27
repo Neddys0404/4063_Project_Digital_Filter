@@ -1,23 +1,32 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.signal import firwin, lfilter, freqz
 
 # Generate a noisy signal
-n = 1 # number of periods
+n = 1  # number of periods
 s = 255  # samples per period of signal
-t = np.linspace(0, 0.0001*n, s*n, endpoint=False)
-signal = (5*np.sin(20000*np.pi*t) + 0.41*np.sin(20000*15*np.pi*t + (57/180)*np.pi))
+t = np.linspace(0, 0.0001 * n, s * n, endpoint=False)
+signal = 5 * np.sin(20000 * np.pi * t) + 0.41 * np.sin(15 * 20000 * np.pi * t + (57 / 180) * np.pi)
 
 # FIR filter design
-num_taps = 50              # Filter length
-cutoff_hz = 10000             # Desired cutoff frequency in Hz
-cutoff_norm = 2*np.pi*cutoff_hz / ((s/(0.0001*n)) / 2)  # Normalize to Nyquist
+num_taps = 50 # size of window
+cutoff_hz = 10000
+fs = s / (0.0001 * n)  # Sampling frequency
+cutoff_norm = cutoff_hz / (fs / 2)  # Normalize to Nyquist
 
-# Design filter using Hamming window
-fir_coeff = firwin(numtaps=num_taps, cutoff=cutoff_norm, window='hamming')
+# Manually create low-pass filter using sinc function and Hamming window
+def sinc_filter(num_taps, cutoff):
+    M = num_taps - 1
+    h = np.sinc(2 * cutoff * (np.arange(num_taps) - M / 2))
+    window = np.hamming(num_taps)
+    h *= window
+    h /= np.sum(h)
+    return h
 
-# Apply the filter
-filtered_signal = lfilter(fir_coeff, 1.0, signal)
+fir_coeff = sinc_filter(num_taps, cutoff_norm)
+print(len(fir_coeff))
+
+# Apply the filter using convolution
+filtered_signal = np.convolve(signal, fir_coeff, mode='same')
 
 # Plot time-domain response
 plt.figure(figsize=(10, 4))
@@ -30,17 +39,19 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
-# Plot frequency response of the filter
-w, h = freqz(fir_coeff, worN=8000)
-frequencies = w * (s/(0.0001*n)) / (2 * np.pi)
+# Frequency response (via FFT)
+N = 8000
+H = np.fft.fft(fir_coeff, n=N)
+frequencies = np.fft.fftfreq(N, d=1/fs)
+half = frequencies[:N//2]
+magnitude_db = 20 * np.log10(np.abs(H[:N//2]))
 
 plt.figure()
-plt.plot(frequencies, 20 * np.log10(np.abs(h)), 'b')
+plt.plot(half, magnitude_db, 'b')
 plt.title("FIR Filter Frequency Response")
 plt.xlabel("Frequency [Hz]")
 plt.ylabel("Magnitude [dB]")
 plt.grid(True)
 plt.axhline(-3, color='r', linestyle='--', label='-3 dB Line')
-# plt.axvline(cutoff_hz, color='r', linestyle='--', label=f'Cutoff Frequency ≈ {cutoff_hz:.3f}')
 plt.legend()
 plt.show()
