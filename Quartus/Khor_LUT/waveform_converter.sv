@@ -1,4 +1,4 @@
-module waveform_generator (
+module waveform_converter (
     input logic clk,
     input logic rst,
     input logic [3:0] sw, // One-hot: 0001=sine, 0010=triangle, 0100=square, 1000=FM
