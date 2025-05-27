@@ -1,5 +1,5 @@
 Fitter report for Project_4063_Digital_Filter
-Wed May 28 01:48:31 2025
+Wed May 28 03:21:27 2025
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -61,7 +61,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed May 28 01:48:31 2025       ;
+; Fitter Status                      ; Successful - Wed May 28 03:21:27 2025       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; Project_4063_Digital_Filter                 ;
 ; Top-level Entity Name              ; Project_4063_Digital_Filter                 ;
@@ -147,12 +147,12 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.02        ;
+; Average used               ; 1.01        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.7%      ;
+;     Processors 2-4         ;   0.3%      ;
 +----------------------------+-------------+
 
 
@@ -1144,7 +1144,7 @@ Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "dummyOut" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1158,7 +1158,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.01 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1168,7 +1168,7 @@ Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments 
 Info (144001): Generated suppressed messages file E:/Documents Alt/ECE4063/Project/Quartus/output_files/Project_4063_Digital_Filter.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
     Info: Peak virtual memory: 5624 megabytes
-    Info: Processing ended: Wed May 28 01:48:31 2025
+    Info: Processing ended: Wed May 28 03:21:27 2025
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:09
 

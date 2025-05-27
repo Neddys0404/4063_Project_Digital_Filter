@@ -8,6 +8,7 @@ module waveform_converter (
     output logic [7:0] outputQuantSig [0:255]
 );
 
+    integer val;
     integer i;
     integer step_size;
     integer pos;
@@ -25,12 +26,19 @@ module waveform_converter (
                         outputQuantSig[i] <= inputQuantSig[i];
                 end
                 4'b0010: begin // Triangle wave
-                    for (i = 0; i < 256; i++) begin
-                        if (i < 128)
-                            outputQuantSig[i] <= i * 2;
-                        else
-                            outputQuantSig[i] <= (255 - i) * 2;
+                    val <= inputQuantSig[0];
+                    for (i = 0; i < 255; i++) begin
+                        if (outputQuantSig[i] >= outputQuantSig[i + 1]) begin
+                            if (val > 1)
+                                val <= val - 2;
+                    
+                        end else begin
+                            if (val < 255)
+                                val <= val + 2;
+                        end
+                        outputQuantSig[i] <= val;
                     end
+                    outputQuantSig[255] <= outputQuantSig[254];
                 end
                 4'b0100: begin // Square wave
                     for (i = 0; i < 256; i++)

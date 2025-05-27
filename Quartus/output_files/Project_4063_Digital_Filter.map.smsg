@@ -1,3 +1,3 @@
 Warning (10268): Verilog HDL information at moving_avg_filter_51tap.sv(14): always construct contains both blocking and non-blocking assignments File: E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/moving_avg_filter_51tap.sv Line: 14
 Warning (10268): Verilog HDL information at fir_lowpass.sv(29): always construct contains both blocking and non-blocking assignments File: E:/Documents Alt/ECE4063/Project/Quartus/Ned_Filter/fir_lowpass.sv Line: 29
-Warning (10268): Verilog HDL information at waveform_converter.sv(16): always construct contains both blocking and non-blocking assignments File: E:/Documents Alt/ECE4063/Project/Quartus/Khor_LUT/waveform_converter.sv Line: 16
+Warning (10268): Verilog HDL information at waveform_converter.sv(17): always construct contains both blocking and non-blocking assignments File: E:/Documents Alt/ECE4063/Project/Quartus/Khor_LUT/waveform_converter.sv Line: 17
