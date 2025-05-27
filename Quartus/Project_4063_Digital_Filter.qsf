@@ -53,7 +53,13 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_P11 -to busClk
+set_location_assignment PIN_A8 -to dummyOut
+set_global_assignment -name SYSTEMVERILOG_FILE Ned_Filter/SignalSender.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Ned_Filter/SignalBuffer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Ned_Filter/moving_avg_filter_51tap.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Ned_Filter/fir_lowpass.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Khor_LUT/waveform_converter.sv
 set_global_assignment -name BDF_FILE rtl/Project_4063_Digital_Filter.bdf
 set_global_assignment -name QIP_FILE pll_clk.qip
-set_location_assignment PIN_A8 -to dummyOut
+set_global_assignment -name BDF_FILE Ned_Filter/Filters.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

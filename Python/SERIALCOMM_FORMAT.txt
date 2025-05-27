@@ -1,0 +1,22 @@
+uart communicate data format: (check ASCII Table)
+
+TX/RX:
+start line: (indicate the values will start sending)
+!!! ()
+each line: (ordered)
+140
+144
+145
+146
+146
+145
+144
+144
+...
+...
+116
+123
+130
+136
+end line: (indicate the value done sending)
+@@@

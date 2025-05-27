@@ -20,7 +20,7 @@ module SignalBuffer (
                 outputSig[i] <= 8'd0;
             end
         end
-        else if (dataRdyFlg) begin
+        end else if (dataRdyFlg) begin
             outputSig[writeIndex] <= inputQuantSig;
             writeIndex <= writeIndex + 1;
         end

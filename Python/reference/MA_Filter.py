@@ -4,7 +4,7 @@ from scipy.signal import freqz
 
 # === Parameters ===
 n=1
-s = 255         # Sampling frequency (Hz)
+s = 256        # Sampling frequency (Hz)
 N = 51         # Number of taps in moving average filter
 t = np.linspace(0, 0.0001*n, s*n, endpoint=False)
 

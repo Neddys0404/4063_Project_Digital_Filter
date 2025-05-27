@@ -1,8 +1,10 @@
 module waveform_converter (
     input logic clk,
     input logic rst,
+    input logic start_flg,
     input logic [3:0] sw, // One-hot: 0001=sine, 0010=triangle, 0100=square, 1000=FM
     input logic [7:0] inputQuantSig [0:255],
+    output logic rdy_flg,
     output logic [7:0] outputQuantSig [0:255]
 );
 
@@ -15,7 +17,8 @@ module waveform_converter (
         if (rst) begin
             for (i = 0; i < 256; i++)
                 outputQuantSig[i] <= 8'd0;
-        end else begin
+            rdy_flg <= 0;
+        end else if (start_flg) begin
             case (sw)
                 4'b0001: begin // Sine (just copy)
                     for (i = 0; i < 256; i++)
@@ -53,6 +56,8 @@ module waveform_converter (
                         outputQuantSig[i] <= 8'd0;
                 end
             endcase
+
+            rdy_flg <= 1;
         end
     end
 endmodule

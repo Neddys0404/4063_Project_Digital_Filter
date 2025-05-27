@@ -1,7 +1,9 @@
 module moving_avg_filter_51tap (
     input  logic        clk,
     input  logic        rst,
+    input  logic        start_flg,
     input  logic [7:0]  inputSig [0:255],
+    output logic rdy_flg,
     output logic [7:0]  outputSig [0:255]
 );
 
@@ -14,7 +16,8 @@ module moving_avg_filter_51tap (
             for (i = 0; i < 256; i++) begin
                 outputSig[i] <= 8'd0;
             end
-        end else begin
+            rdy_flg <= 0;
+        end else if (start_flg) begin
             for (i = 0; i < 256; i++) begin
                 sum = 0;
                 if (i >= 50) begin
@@ -27,6 +30,8 @@ module moving_avg_filter_51tap (
                     outputSig[i] <= 8'd0;
                 end
             end
+
+            rdy_flg <= 1;
         end
     end
 
