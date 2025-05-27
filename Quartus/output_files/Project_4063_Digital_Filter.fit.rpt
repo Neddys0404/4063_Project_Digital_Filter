@@ -1,5 +1,5 @@
 Fitter report for Project_4063_Digital_Filter
-Wed May 28 03:21:27 2025
+Wed May 28 05:31:21 2025
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -61,7 +61,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed May 28 03:21:27 2025       ;
+; Fitter Status                      ; Successful - Wed May 28 05:31:21 2025       ;
 ; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                      ; Project_4063_Digital_Filter                 ;
 ; Top-level Entity Name              ; Project_4063_Digital_Filter                 ;
@@ -1158,7 +1158,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.01 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1167,8 +1167,8 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file E:/Documents Alt/ECE4063/Project/Quartus/output_files/Project_4063_Digital_Filter.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 5624 megabytes
-    Info: Processing ended: Wed May 28 03:21:27 2025
+    Info: Peak virtual memory: 5625 megabytes
+    Info: Processing ended: Wed May 28 05:31:22 2025
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:09
 

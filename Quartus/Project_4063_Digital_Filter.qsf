@@ -54,6 +54,16 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_P11 -to busClk
 set_location_assignment PIN_A8 -to dummyOut
+set_location_assignment PIN_C10 -to control_wave[0]
+set_location_assignment PIN_C11 -to control_wave[1]
+set_location_assignment PIN_D12 -to control_wave[2]
+set_location_assignment PIN_C12 -to control_wave[3]
+set_location_assignment PIN_A12 -to control_Filter[0]
+set_location_assignment PIN_B12 -to control_Filter[1]
+set_global_assignment -name SYSTEMVERILOG_FILE Wilbur_UART/rx_buffer.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Wilbur_UART/uart_tx.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Wilbur_UART/uart_rx.sv
+set_global_assignment -name SYSTEMVERILOG_FILE Wilbur_UART/uart_block.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Ned_Filter/filter_selector.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Ned_Filter/SignalSender.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Ned_Filter/SignalBuffer.sv
@@ -63,10 +73,5 @@ set_global_assignment -name SYSTEMVERILOG_FILE Khor_LUT/waveform_converter.sv
 set_global_assignment -name BDF_FILE rtl/Project_4063_Digital_Filter.bdf
 set_global_assignment -name QIP_FILE pll_clk.qip
 set_global_assignment -name BDF_FILE Ned_Filter/Filters.bdf
-set_location_assignment PIN_C10 -to control_wave[0]
-set_location_assignment PIN_C11 -to control_wave[1]
-set_location_assignment PIN_D12 -to control_wave[2]
-set_location_assignment PIN_C12 -to control_wave[3]
-set_location_assignment PIN_A12 -to control_Filter[0]
-set_location_assignment PIN_B12 -to control_Filter[1]
+set_global_assignment -name BDF_FILE Wilbur_UART/UART_TXRX.bdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
