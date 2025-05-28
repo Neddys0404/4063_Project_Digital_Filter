@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1748416113" />
+    <testcase name="test_waveform_converter_sine_mode" classname="testLUT" file="/mnt/c/Users/Ned/Documents/ECE4063/4063_Project_Digital_Filter/Python/testbenches_LUT/testLUT.py" lineno="7" time="0.028725385665893555" sim_time_ns="30.001" ratio_time="1044.407213499" />
+  </testsuite>
+</testsuites>

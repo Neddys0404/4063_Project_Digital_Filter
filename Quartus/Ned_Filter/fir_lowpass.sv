@@ -9,18 +9,61 @@ module fir_lowpass_filter (
 
     localparam int TAPS = 50;
     localparam int FRAC_BITS = 14;
+    logic signed [15:0] coeffs [0:TAPS-1];
 
     // Fixed-point coefficients (Q2.14), signed 16-bit
-    logic signed [15:0] coeffs [0:TAPS-1] = '{
-		 16'sd40, 16'sd43, 16'sd49, 16'sd60, 16'sd75, 16'sd94, 16'sd117,
-		 16'sd143, 16'sd173, 16'sd206, 16'sd241, 16'sd278, 16'sd316, 16'sd355,
-		 16'sd394, 16'sd432, 16'sd469, 16'sd504, 16'sd536, 16'sd565, 16'sd589,
-		 16'sd609, 16'sd625, 16'sd636, 16'sd642, 16'sd642, 16'sd636, 16'sd625,
-		 16'sd609, 16'sd589, 16'sd565, 16'sd536, 16'sd504, 16'sd469, 16'sd432,
-		 16'sd394, 16'sd355, 16'sd316, 16'sd278, 16'sd241, 16'sd206, 16'sd173,
-		 16'sd143, 16'sd117, 16'sd94,  16'sd75,  16'sd60,  16'sd49,  16'sd43,
-		 16'sd40 
-	};
+    initial begin
+        coeffs[0] = 16'sd40;
+        coeffs[1] = 16'sd43;
+        coeffs[2] = 16'sd49;
+        coeffs[3] = 16'sd60;
+        coeffs[4] = 16'sd75;
+        coeffs[5] = 16'sd94;
+        coeffs[6] = 16'sd117;
+        coeffs[7] = 16'sd143;
+        coeffs[8] = 16'sd173;
+        coeffs[9] = 16'sd206;
+        coeffs[10] = 16'sd241;
+        coeffs[11] = 16'sd278;
+        coeffs[12] = 16'sd316;
+        coeffs[13] = 16'sd355;
+        coeffs[14] = 16'sd394;
+        coeffs[15] = 16'sd432;
+        coeffs[16] = 16'sd469;
+        coeffs[17] = 16'sd504;
+        coeffs[18] = 16'sd536;
+        coeffs[19] = 16'sd565;
+        coeffs[20] = 16'sd589;
+        coeffs[21] = 16'sd609;
+        coeffs[22] = 16'sd625;
+        coeffs[23] = 16'sd636;
+        coeffs[24] = 16'sd642;
+        coeffs[25] = 16'sd642;
+        coeffs[26] = 16'sd636;
+        coeffs[27] = 16'sd625;
+        coeffs[28] = 16'sd609;
+        coeffs[29] = 16'sd589;
+        coeffs[30] = 16'sd565;
+        coeffs[31] = 16'sd536;
+        coeffs[32] = 16'sd504;
+        coeffs[33] = 16'sd469;
+        coeffs[34] = 16'sd432;
+        coeffs[35] = 16'sd394;
+        coeffs[36] = 16'sd355;
+        coeffs[37] = 16'sd316;
+        coeffs[38] = 16'sd278;
+        coeffs[39] = 16'sd241;
+        coeffs[40] = 16'sd206;
+        coeffs[41] = 16'sd173;
+        coeffs[42] = 16'sd143;
+        coeffs[43] = 16'sd117;
+        coeffs[44] = 16'sd94;
+        coeffs[45] = 16'sd75;
+        coeffs[46] = 16'sd60;
+        coeffs[47] = 16'sd49;
+        coeffs[48] = 16'sd43;
+        coeffs[49] = 16'sd40;
+    end
 
     // Internal signed accumulator (wide enough to hold 51 * 255 * 2^14)
     logic signed [31:0] acc;

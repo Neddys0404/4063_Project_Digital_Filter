@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1748415842" />
+    <testcase name="test_fir_lowpass_filter" classname="testFir" file="/mnt/c/Users/Ned/Documents/ECE4063/4063_Project_Digital_Filter/Python/testbenches_Filter/testFir.py" lineno="19" time="0.047452688217163086" sim_time_ns="17.501" ratio_time="368.80945332134195" />
+  </testsuite>
+</testsuites>
