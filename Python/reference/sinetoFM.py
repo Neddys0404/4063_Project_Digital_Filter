@@ -26,7 +26,7 @@ pos = 0
 fm_bit = 0
 for i in range(samples):
     # Map [0, 255] to step sizes [20 (low freq), 1 (high freq)]
-    step_size = 20 - (sine_wave[i] * 19) // 255
+    step_size = 51 - (sine_wave[i] * 50) // 255
     pos += 1
     if pos >= step_size:
         fm_bit ^= 1  # Toggle bit

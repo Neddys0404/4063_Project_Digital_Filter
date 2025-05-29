@@ -4,12 +4,12 @@ import matplotlib.pyplot as plt
 # Generate a noisy signal
 n = 1  # number of periods
 s = 255  # samples per period of signal
-t = np.linspace(0, 0.0001 * n, s * n, endpoint=False)
-signal = 5 * np.sin(20000 * np.pi * t) + 0.41 * np.sin(15 * 20000 * np.pi * t + (57 / 180) * np.pi)
+t = np.linspace(0, 0.001 * n, s * n, endpoint=False)
+signal = 5 * np.sin(2000 * np.pi * t) + 0.41 * np.sin(15 * 2000 * np.pi * t + (57 / 180) * np.pi)
 
 # FIR filter design
 num_taps = 50 # size of window
-cutoff_hz = 10000
+cutoff_hz = 1000
 fs = s / (0.0001 * n)  # Sampling frequency
 cutoff_norm = cutoff_hz / (fs / 2)  # Normalize to Nyquist
 

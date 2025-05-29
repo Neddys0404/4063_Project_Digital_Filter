@@ -49,8 +49,8 @@ module waveform_converter (
                     fm_bit = 0;
                     for (i = 0; i < 256; i++) begin
                         // Higher sine value = faster change
-                        // Map [0, 255] to [1, 20] steps (low freq = slow change, high freq = fast toggle)
-                        step_size = 20 - (inputQuantSig[i] * 19) / 255;
+                        // Map [0, 255] to [1, 51] steps (low freq = slow change, high freq = fast toggle)
+                        step_size = 51 - (inputQuantSig[i] * 50) / 255;
                         pos += 1;
                         if (pos >= step_size) begin
                             fm_bit = ~fm_bit;

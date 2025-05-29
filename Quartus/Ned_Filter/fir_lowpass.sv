@@ -98,5 +98,4 @@ module fir_lowpass_filter (
             end
         end
     end
-
 endmodule
